@@ -1,0 +1,163 @@
+html, body {
+  height: 100%;
+  margin: 10px;
+  padding: 10px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #007bff;
+  font-size: 2.5em;
+}
+
+img {
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  float: right;
+  margin: 10px;
+}
+
+ul, ol {
+  padding-left: 20px;
+  list-style-position: inside;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.haiku {
+  background-color: #e9ecef;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+.soft, .math, .data, .comp, .web {
+  font-weight: bold;
+}
+
+.soft { background-color: aqua; }
+.math { background-color: blueviolet; }
+.data { background-color: beige; }
+.comp { background-color: blanchedalmond; }
+.web { background-color: chartreuse; }
+
+@media screen and (max-width: 600px) {
+  .haiku, img {
+    width: 100%;
+    float: none;
+    margin: 10px 0;
+  }
+}
+/* Apple style thingy */
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+@keyframes showTopText {
+  0% { transform: translate3d(0, 100%, 0); }
+  40%, 60% { transform: translate3d(0, 50%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes showBottomText {
+  0% { transform: translate3d(0, -100%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes hideText {
+  0%, 100% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.animated-title {
+  color: #222;
+  font-family: Roboto, Arial, sans-serif;
+  height: 90vmin;
+  left: 60%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vmin;
+
+}
+
+.animated-title > div {
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.animated-title > div div {
+  font-size: 8vmin;
+  padding: 2vmin 0;
+  position: absolute;
+}
+
+.animated-title > div div span {
+  display: block;
+}
+
+.animated-title > div.text-top {
+  border-bottom: 1vmin solid #000000;
+  top: 0;
+  width: 500px;
+  animation: hideText 5s linear;
+  animation-fill-mode: forwards;
+}
+
+.animated-title > div.text-top div {
+  animation: showTopText 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  bottom: 0;
+  transform: translate(0, 100%);
+}
+
+.animated-title > div.text-top div span:first-child {
+  color: #767676;
+}
+
+.animated-title > div.text-bottom {
+  bottom: 0;
+}
+
+.animated-title > div.text-bottom div {
+  animation: showBottomText 0.5s;
+  animation-delay: 1.75s;
+  animation-fill-mode: forwards;
+  top: 0;
+  transform: translate(0, -100%);
+}
+
+/* Apple style thingy */

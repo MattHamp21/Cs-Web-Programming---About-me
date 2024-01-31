@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(rgba(171, 219, 235), rgb(220, 244, 255));
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  width: 100%; /* Full width */
+  display: flex;
+  justify-content: center; /* Center nav horizontally */
+  z-index: 1000; /* Ensure header is above other content */
+}
+
+nav {
+  padding: 1vh;
+  display: flex; /* Corrected from 'flexbox' to 'flex' */
+  justify-content: center;
+  opacity: 0; /* Initially hide the nav */
+  animation: fadeInNav 2s ease-in-out 5s forwards; /* Animation for nav */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0; 
+  padding: 0; 
+  display: flex;
+  font-size: 25px;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  font-size: 35px;
+  text-decoration: none; /* Remove underline */
+}
+
+nav ul li a:hover {
+  color: rgb(0, 0, 0);
+  text-decoration: none; /* Ensure no underline on hover */
+}
+
+/* Keyframes for nav animation */
+@keyframes fadeInNav {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Styles for animated title */
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+.animated-title {
+  color: #000000;
+  font-family: Roboto, Arial, sans-serif;
+  height: 90vmin;
+  left: 60%;
+  position: absolute;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  width: 90vmin;
+}
+
+.animated-title > div {
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.animated-title > div div {
+  font-size: 8vmin;
+  padding: 2vmin 0;
+  position: absolute;
+
+}
+
+.animated-title > div.text-top {
+  border-bottom: 1vmin solid #000000;
+  top: 0;
+  width: 560px;
+  animation: hideText 4s linear forwards;
+}
+
+.animated-title > div.text-top div {
+  animation: showTopText 1s 0.5s forwards;
+  bottom: 0;
+  transform: translate(0, 100%);
+}
+
+.animated-title > div.text-bottom {
+  bottom: 0;
+  color: white;
+  animation: hideText 5s linear forwards; /* Add this line */
+
+}
+
+.animated-title > div.text-bottom div {
+  animation: showBottomText 0.5s 1.75s forwards;
+  top: 0;
+  transform: translate(0, -100%);
+}
+
+/* Keyframes for title animations */
+@keyframes showTopText {
+  0% { transform: translate3d(0, 100%, 0); }
+  40%, 60% { transform: translate3d(0, 50%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes showBottomText {
+  0% { transform: translate3d(0, -100%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes hideText {
+  0%, 100% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.animated-title {
+  pointer-events: none; /* This allows clicks to pass through */
+}
+header {
+  position: relative; /* Makes z-index effective */
+}
