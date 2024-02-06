@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  height: 100vh;
+  height: 200vh;
   background: linear-gradient(rgba(171, 219, 235), rgb(220, 244, 255));
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -18,12 +18,17 @@ nav {
   animation: fadeInNav 1s ease-in-out 0s forwards; /* Animation for nav */
 }
 .main-div {
-  /* Add top margin if necessary */
-  margin-top: 70px; /* Adjust based on the actual height of your nav */
+  margin-top: 70px;
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  flex-direction: column; /* Stack children vertically */
-  align-items: center; /* Center children horizontally */
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: auto;
+}
+img {
+  border-radius: 50%; /* Circular image */
+  margin-bottom: 15px;
 }
 
 nav ul {
